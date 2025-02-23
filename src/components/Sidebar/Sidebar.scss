@@ -1,0 +1,98 @@
+.sidebar {
+  height: 100vh;
+  width: 250px;
+  background-color: #2c3e50;
+  color: white;
+  transition: width 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidebar.closed {
+  width: 60px;
+}
+
+.sidebar-section {
+  margin-bottom: 20px;
+}
+
+.sidebar-section .section-title {
+  padding: 10px;
+  font-size: 16px;
+  color: #bdc3c7;
+  opacity: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-width 0.3s ease;
+  max-width: 100%;
+}
+
+.sidebar.closed .section-title {
+  opacity: 0;
+  max-width: 0;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sidebar ul li .icon {
+  margin-right: 10px;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.sidebar ul li .text {
+  opacity: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-width 0.3s ease;
+  max-width: 200px;
+}
+
+.sidebar.closed ul li .text {
+  opacity: 0;
+  max-width: 0;
+}
+
+.sidebar ul li:hover {
+  background-color: #34495e;
+}
+
+.toggle-btn {
+  background-color: #34495e;
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  position: fixed; /* Фиксированное позиционирование */
+  top: 10px; /* Отступ сверху */
+  left: 260px; /* Позиция справа от сайдбара (250px + 10px отступа) */
+  z-index: 1;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: left 0.3s ease; /* Анимация для перемещения кнопки */
+}
+
+.sidebar.closed ~ .toggle-btn {
+  left: 70px; /* Позиция справа от закрытого сайдбара (60px + 10px отступа) */
+}
+
+.toggle-btn:hover {
+  background-color: #1abc9c;
+}

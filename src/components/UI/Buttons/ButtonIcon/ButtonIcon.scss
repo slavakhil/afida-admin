@@ -1,0 +1,22 @@
+@import '../../../../styles/colors.scss';
+
+.button-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  &--outline {
+    background-color: transparent;
+    // border: 1px solid $color-gray;
+  }
+  &:hover {
+    background-color: blue;
+  }
+  &:active {
+    background-color: green;
+  }
+}
