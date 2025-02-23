@@ -1,11 +1,11 @@
 import React from 'react';
 import './ButtonIcon.scss';
 
-function ButtonIcon({ Icon, onHandleClick, isOutline = false, iconColor, backgroundColor }) {
+function ButtonIcon({ Icon, onHandleClick, isSpec = false, iconColor, backgroundColor }) {
   return (
     <button
-      className={`button-icon ${isOutline ? 'button-icon--outline' : ''}`}
-      style={{ backgroundColor, iconColor }}
+      className={`button-icon ${isSpec ? 'button-icon--spec' : ''}`}
+      style={{ fill: iconColor, backgroundColor: backgroundColor }}
       onClick={onHandleClick}
     >
       <Icon />

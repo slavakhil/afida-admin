@@ -11,38 +11,37 @@ const Sidebar = () => {
   return (
     <>
       <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
-        <div className="sidebar-section">
-          <h3 className="section-title">Основные страницы</h3>
+        <div className='sidebar-section-main'>
+          <div>Logo</div>
           <ul>
             <li>
-              <span className="icon">🏠</span>
-              <span className="text">Главная</span>
+              <span className='icon'>🏠</span>
+              <span className='text'>Главная</span>
             </li>
             <li>
-              <span className="icon">📂</span>
-              <span className="text">Проекты</span>
+              <span className='icon'>📂</span>
+              <span className='text'>Проекты</span>
             </li>
             <li>
-              <span className="icon">📧</span>
-              <span className="text">Сообщения</span>
+              <span className='icon'>📧</span>
+              <span className='text'>Сообщения</span>
             </li>
           </ul>
         </div>
-        <div className="sidebar-section">
-          <h3 className="section-title">Другие страницы</h3>
+        <div className='sidebar-section-secondary'>
           <ul>
             <li>
-              <span className="icon">⚙️</span>
-              <span className="text">Настройки</span>
+              <span className='icon'>⚙️</span>
+              <span className='text'>Настройки</span>
             </li>
             <li>
-              <span className="icon">🛠️</span>
-              <span className="text">Инструменты</span>
+              <span className='icon'>🛠️</span>
+              <span className='text'>Инструменты</span>
             </li>
           </ul>
         </div>
       </div>
-      <button onClick={toggleSidebar} className="toggle-btn">
+      <button onClick={toggleSidebar} className='toggle-btn'>
         {isOpen ? '‹' : '›'}
       </button>
     </>
