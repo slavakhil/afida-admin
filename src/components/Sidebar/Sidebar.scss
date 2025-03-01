@@ -17,15 +17,15 @@
 
 .sidebar-section-main {
   // padding-top: 20px;
-  padding-bottom: 20px;
-  color: #ffffff;
-  background: linear-gradient(#1476c6, #004578);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  // flex-grow: 1;
-  position: relative; /* Для позиционирования псевдоэлемента */
-  overflow: hidden; /* Чтобы скрыть выступающие части волны */
+  // padding-bottom: 20px;
+  // color: #ffffff;
+  // background: linear-gradient(#1476c6, #004578);
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
+  // // flex-grow: 1;
+  // position: relative; /* Для позиционирования псевдоэлемента */
+  // overflow: hidden; /* Чтобы скрыть выступающие части волны */
 }
 
 .sidebar-section-main::after {
@@ -41,7 +41,8 @@
   z-index: 1; /* Чтобы волна была над secondary section */
 }
 
-.sidebar-section-main .section-title {
+.sidebar-section-main {
+  background: linear-gradient(#1476c6, #004578);
   height: auto;
   padding: 10px;
   font-size: 16px;
@@ -51,46 +52,51 @@
   overflow: hidden;
   transition: opacity 0.3s ease, max-width 0.3s ease;
   max-width: 100%;
+  position: relative; /* Для позиционирования псевдоэлемента */
+  overflow: hidden; /* Чтобы скрыть выступающие части волны */
+  .section-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-left: 18px;
+    padding-bottom: 30px;
+    margin-top: 50px;
+    .section-item {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 24px;
+        height: 24px;
+        fill: white;
+      }
+      .text {
+        color: white;
+      }
+    }
+  }
+}
+
+.sidebar-section-main.closed {
+  .section-list {
+    align-items: center;
+    margin-left: 0;
+  }
+}
+
+.sidebar-section-main.open {
+  .section-list {
+    align-items: left;
+    margin-left: 8px;
+  }
 }
 
 .sidebar.closed .section-title {
   opacity: 0;
   max-width: 0;
-}
-
-.sidebar ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.sidebar ul li {
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-.sidebar ul li .icon {
-  margin-right: 10px;
-  font-size: 20px;
-  flex-shrink: 0;
-}
-
-.sidebar ul li .text {
-  opacity: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  transition: opacity 0.3s ease, max-width 0.3s ease;
-  max-width: 200px;
-}
-
-.sidebar.closed ul li .text {
-  opacity: 0;
-  max-width: 0;
-}
-
-.sidebar ul li:hover {
-  background-color: #34495e;
 }
 
 .toggle-btn {
@@ -127,4 +133,28 @@
   background: linear-gradient(to right, #ffffff 0%, #fcf8f8, 120%, #b6b6b6 150%);
   position: relative; /* Для корректного отображения волны */
   z-index: 0; /* Чтобы secondary section был под волной */
+  fill: black;
+  .section-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-left: 18px;
+    margin-top: 20px;
+    .section-item {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 24px;
+        height: 24px;
+        fill: black;
+      }
+      .text {
+        fill: black;
+      }
+    }
+  }
 }
